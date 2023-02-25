@@ -30,25 +30,26 @@ body {
 }
 
 .container {
+  display: grid;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* Top section */
-.header {
+.top-section {
   margin-bottom: 2rem;
   display: grid;
   grid-template-rows: auto auto;
   justify-items: center;
 }
-.header h1 {
+.top-section h1 {
   color: var(--dark-purple);
   text-align: center;
   font-size: 3rem;
   line-height: 3rem;
 }
-.header p {
+.top-section p {
   color: var(--dark-magenta);
   text-align: center;
 }
@@ -124,7 +125,7 @@ body {
 /* Tablet styles  */
 /* Ratings section */
 @media screen and (min-width: 780px) {
-  .header {
+  .top-section {
     margin-bottom: 2rem;
     display: grid;
     grid-template-rows: auto auto;
@@ -146,22 +147,25 @@ body {
 /* Desktop styles  */
 /* Ratings section */
 @media screen and (min-width: 1200px) {
-  .header {
+  .top-section {
     margin-bottom: 2rem;
     margin-left: 3rem;
     display: grid;
     grid-template-columns: 0.5fr 1fr;
+    grid-template-areas: "intro ratings";
   }
-  .header h1 {
+  .top-section h1 {
     text-align: left;
   }
-  .header p {
+  .top-section p {
     text-align: left;
   }
   .ratings {
+    display: grid;
     width: auto;
     margin-top: 3rem;
     font-weight: 500;
+    grid-area: ratings;
   }
   .rating-1 {
     width: 25rem;
@@ -182,6 +186,10 @@ body {
     grid-template-areas: "image text";
     grid-template-rows: auto auto;
     align-items: center;
+  }
+  .intro {
+    display: grid;
+    grid-area: intro;
   }
   /* Bottom section */
   .testimonial-section {
